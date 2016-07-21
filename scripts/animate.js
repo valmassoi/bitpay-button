@@ -2,7 +2,9 @@ var animate = {
   init: function() {
     this.cacheDom();
     this.bindEvents();
-    this.animating = false; // TODO
+    this.animating = false;
+    this.mousedOut = false;
+    this.atBeginning = true;
     this.speed = 1000;
   },
   cacheDom: function() {
@@ -27,19 +29,23 @@ var animate = {
   },
   mouseIn: function() {
     console.log("in " + this.speed);
-    // if(!this.animating) { //TODO
-      this.animating = true;
+    if(!this.animating) {
+      animate.animating = true;
+      animate.atBeginning = false;
       this.animateLogo();
       this.animateBackground();
       this.animateText();
-    // }
+    }
   },
   animateLogo: function() {
     this.$logo.animate({
       left: ["+=142.5", "easeOutElastic"]
     }, this.speed, function(){
       console.log("done");
-      this.animating = false;
+      animate.animating = false;
+      console.log(animate.mousedOut);
+      if(animate.mousedOut)
+        animate.reverseAnimation()
     });
 
     this.$logo.rotate({
@@ -64,7 +70,16 @@ var animate = {
   },
 
   mouseOut: function() { //TODO DRY up
-    this.animating = true; //TODO
+    if(!animate.animating && !animate.atBeginning)
+      this.reverseAnimation()
+    else
+      animate.mousedOut = true;
+    console.log(animate.mousedOut);
+  },
+
+  reverseAnimation: function() {
+    animate.animating = true;
+    animate.mousedOut = false;
     console.log("out");
     this.$logo.animate({
       left: ["-=142.5", ""]
@@ -83,7 +98,8 @@ var animate = {
       borderRadius: ["10", ""]
     }, this.speed*.6, function(){
       console.log("done");
-      this.animating = false;
+      animate.animating = false;
+      animate.atBeginning = true;
     })
 
     this.$text.animate({
