@@ -1,0 +1,44 @@
+body {
+  color: black;
+  font-family: sans-serif;
+}
+
+h1 {
+  color: #1D3C8E;
+}
+
+#btn-container {
+  position: relative;
+  background-color: white;
+  box-shadow: 0px 0px 15px #e4e4e4;
+  height: 50px;
+  width: 335px;
+  border-radius: 25px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+#btc-logo {
+  float: left;
+  position: relative;
+  width: 35px;
+  padding: 7.5px;
+  z-index: 100;
+}
+
+#click-here {
+  position: absolute;
+  top: 0px;
+  left: 129.5px;
+}
+
+#orange-background {
+  position:absolute;
+  z-index: 50;
+  left: 10px;
+  top: 22.5px;
+  width: 30px;
+  height: 5px;
+  border-radius: 10px;
+  background-color: #fbb363
+}
