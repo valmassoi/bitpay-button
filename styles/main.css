@@ -1,10 +1,18 @@
 body {
   color: black;
   font-family: sans-serif;
+  background-color: #FAFAFD;
 }
 
-h1 {
+h1, a {
   color: #1D3C8E;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+a:hover {
+  color: #7ea8ef;
+  background-color: rgba(0, 0, 0, 0.025);
 }
 
 #btn-container {
@@ -40,5 +48,10 @@ h1 {
   width: 30px;
   height: 5px;
   border-radius: 10px;
-  background-color: #fbb363
+  background-color: #fbb363;
+}
+
+.subnote {
+  color: grey;
+  font-size: 12px;
 }
