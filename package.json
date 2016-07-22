@@ -1,0 +1,31 @@
+{
+  "name": "litebulb",
+  "version": "1.0.1",
+  "description": "Animation: BitPay front-end dev position prompt",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./server.js",
+    "nodemon": "nodemon ./server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/valmassoi/bitpay-button.git"
+  },
+  "author": "valmassoi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/valmassoi/bitpay-button/issues"
+  },
+  "homepage": "https://github.com/valmassoi/bitpay-button#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  },
+  "engines": {
+    "node": "6.2.0"
+  },
+  "devDependencies": {
+    "morgan": "^1.7.0",
+    "nodemon": "^1.9.2"
+  }
+}
